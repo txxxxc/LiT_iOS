@@ -16,6 +16,7 @@
 		7131697524FF491C00AB041F /* CountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7131697424FF491C00AB041F /* CountTests.swift */; };
 		7131698024FF491C00AB041F /* CountUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7131697F24FF491C00AB041F /* CountUITests.swift */; };
 		7131698E24FF4D1600AB041F /* mimicopy.png in Resources */ = {isa = PBXBuildFile; fileRef = 7131698D24FF4D1500AB041F /* mimicopy.png */; };
+		7131699024FF565C00AB041F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7131698F24FF565C00AB041F /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		7131697F24FF491C00AB041F /* CountUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountUITests.swift; sourceTree = "<group>"; };
 		7131698124FF491C00AB041F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7131698D24FF4D1500AB041F /* mimicopy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mimicopy.png; path = ../../../../Desktop/mimicopy.png; sourceTree = "<group>"; };
+		7131698F24FF565C00AB041F /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		7131695C24FF491900AB041F /* Count */ = {
 			isa = PBXGroup;
 			children = (
+				7131698F24FF565C00AB041F /* icon.png */,
 				7131698D24FF4D1500AB041F /* mimicopy.png */,
 				7131695D24FF491900AB041F /* AppDelegate.swift */,
 				7131695F24FF491900AB041F /* SceneDelegate.swift */,
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7131696A24FF491B00AB041F /* LaunchScreen.storyboard in Resources */,
+				7131699024FF565C00AB041F /* icon.png in Resources */,
 				7131696724FF491B00AB041F /* Assets.xcassets in Resources */,
 				7131698E24FF4D1600AB041F /* mimicopy.png in Resources */,
 				7131696524FF491900AB041F /* Main.storyboard in Resources */,
@@ -439,12 +443,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L4RQ287Q4R;
 				INFOPLIST_FILE = Count/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tt.Count;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tanaka.tt.Count;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -456,12 +462,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L4RQ287Q4R;
 				INFOPLIST_FILE = Count/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tt.Count;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tanaka.tt.Count;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
