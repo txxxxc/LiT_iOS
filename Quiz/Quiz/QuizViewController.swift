@@ -2,61 +2,48 @@
 //  QuizViewController.swift
 //  Quiz
 //
-//  Created by litech on 2015/02/10.
-//  Copyright (c) 2015年 LifeisTech. All rights reserved.
+//  Created by tomoya tanaka on 2020/09/05.
+//  Copyright © 2020 Tomoya Tanaka. All rights reserved.
 //
 
 import UIKit
 
 class QuizViewController: UIViewController {
-    //クイズを格納する配列
-    var quizArray = [[Any]]()
     
-    //正解数
+    var quizArray = [Any]()
+    
     var correctAnswer: Int = 0
     
-    //クイズを表示するTextView
     @IBOutlet var quizTextView: UITextView!
     
-    //選択肢のボタン
-    @IBOutlet var choiceButtons1: UIButton!
-    @IBOutlet var choiceButtons2: UIButton!
-    @IBOutlet var choiceButtons3: UIButton!
-    
+    @IBOutlet var choiceButton1: UIButton!
+    @IBOutlet var choiceButton2: UIButton!
+    @IBOutlet var choiceButton3: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        quizArray.append(["Appleの2015年現在のCEOの名前は？", "スティーブ・ジョブズ", "ティム・クック", "ジョナサン・アイブ", 2 ])
+        quizArray.append(["iPhone6s, iPhone6s Plusから新たに導入された、画面タッチの指の圧力を検出する機能をなんという？", "3Dタッチ", "4Dタッチ", "スーパータッチ", 1 ])
+        quizArray.append(["iPod touchのモデルの中で最大容量のものは何GB", "64GB", "128GB", "160GB", 2 ])
+        quizArray.append(["1985年、Appleを追放されたジョブズが立ち上げた会社名の正式名称あ？", "NEXt,Inc.", "NExT, Inc.", "NeXT, Inc.", 3 ])
+        quizArray.append(["2015年9月30日にリリースされたOSXの名前は？", "El Captain", "EL Capitan", "ElCapital", 2 ])
+        quizArray.append(["Apple WatchはiPhoneとどんな通信方法でペアリングされる？", "FM電波", "Wi-Fi", "Bluetooth", 3 ])
         
-        //------------------------ここから下にクイズを書く------------------------//
-        quizArray.append(["Life is Tech!のロゴTシャツにない色は？", "赤", "オレンジ", "黄色", 2])
-        quizArray.append(["4月1日は何の日？", "春分の日", "ホワイトデー", "エイプリルフール", 3])
-        quizArray.append(["俺は？", "てぃーてぃー", "人間", "人類", 2])
-        //------------------------ここから上にクイズを書く------------------------//
         quizArray.shuffle()
         choiceQuiz()
     }
     
     func choiceQuiz() {
-        quizTextView.text = quizArray[0][0] as? String
         
-        //選択肢のボタンにそれぞれ選択肢のテキストをセット
-        choiceButtons1.setTitle(quizArray[0][1] as? String, for: .normal)
-        choiceButtons2.setTitle(quizArray[0][2] as? String, for: .normal)
-        choiceButtons3.setTitle(quizArray[0][3] as? String, for: .normal)
-    }
-    
-    @IBAction func choiceAnswer(sender: UIButton) {
-        if quizArray[0][4] as! Int == sender.tag {
-            //正解数を増やす
-            correctAnswer+=1
-        }
+        let tmpArray = quizArray[0] as! [Any]
         
-        quizArray.remove(at: 0)
-        //解いた問題数の合計が予め設定していた問題数に達したら結果画面へ
-        if quizArray.count == 0 {
-            performSegueToResult()
-        } else {
-            choiceQuiz()
-        }
+        quizTextView.text = tmpArray[0] as? String
+        
+        choiceButton1.setTitle(tmpArray[1] as? String, for: .normal)
+        choiceButton2.setTitle(tmpArray[2] as? String, for: .normal)
+        choiceButton3.setTitle(tmpArray[3] as? String, for: .normal)
     }
     
     func performSegueToResult() {
@@ -64,12 +51,37 @@ class QuizViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "toResultView") {
-            
-            let resultView = segue.destination as! ResultViewController
-            resultView.correctAnswer = self.correctAnswer
+        if segue.identifier == "toResultView" {
+            let resultViewController = segue.destination as! ResultViewController
+            resultViewController.correctAnswer = self.correctAnswer
         }
     }
+    
+    @IBAction func choiceAnswer(sender: UIButton) {
+        let tmpArray = quizArray[0] as! [Any]
+        
+        if tmpArray[4] as! Int == sender.tag {
+            correctAnswer = correctAnswer + 1
+        }
+        
+        quizArray.remove(at: 0)
+        
+        if quizArray.count == 0 {
+            performSegueToResult()
+        } else {
+            choiceQuiz()
+        }
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }
-
-
