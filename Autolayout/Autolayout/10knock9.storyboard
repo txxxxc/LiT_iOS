@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="mWZ-n8-oug">
+            <objects>
+                <viewController id="3YR-oe-4L4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JBs-rj-3rc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cebu.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="oo2-fK-1gd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="hZZ-S2-jTA"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="セブ島" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z94-SH-mMy">
+                                <rect key="frame" x="16" y="308" width="121" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="tza-21-7PC">
+                                <rect key="frame" x="25" y="376" width="325" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOR-FA-qyZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="いいね"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0N-r8-08W">
+                                        <rect key="frame" x="103" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="シェア"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgE-Ie-nHG">
+                                        <rect key="frame" x="206" y="0.0" width="31" height="30"/>
+                                        <state key="normal" title="道順"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgP-ht-6J6">
+                                        <rect key="frame" x="294" y="0.0" width="31" height="30"/>
+                                        <state key="normal" title="電話"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oo2-fK-1gd" firstAttribute="leading" secondItem="dbR-KR-z0Q" secondAttribute="leading" id="CUd-dz-4wd"/>
+                            <constraint firstItem="dbR-KR-z0Q" firstAttribute="trailing" secondItem="tza-21-7PC" secondAttribute="trailing" constant="25" id="O5X-uh-2ef"/>
+                            <constraint firstAttribute="trailing" secondItem="oo2-fK-1gd" secondAttribute="trailing" id="Q2B-eZ-R7R"/>
+                            <constraint firstItem="tza-21-7PC" firstAttribute="top" secondItem="Z94-SH-mMy" secondAttribute="bottom" constant="20" id="SDB-7X-rST"/>
+                            <constraint firstItem="oo2-fK-1gd" firstAttribute="top" secondItem="dbR-KR-z0Q" secondAttribute="top" id="XZv-Ya-aRz"/>
+                            <constraint firstItem="tza-21-7PC" firstAttribute="leading" secondItem="dbR-KR-z0Q" secondAttribute="leading" constant="25" id="ZSF-sN-2lx"/>
+                            <constraint firstItem="Z94-SH-mMy" firstAttribute="top" secondItem="oo2-fK-1gd" secondAttribute="bottom" constant="8" id="luS-Ns-4wb"/>
+                            <constraint firstItem="Z94-SH-mMy" firstAttribute="leading" secondItem="dbR-KR-z0Q" secondAttribute="leading" constant="16" id="xyN-Xw-bNu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dbR-KR-z0Q"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TIs-x8-boD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="124" y="4806"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cebu.jpeg" width="700" height="469"/>
+    </resources>
+</document>
